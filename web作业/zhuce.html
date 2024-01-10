@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>民族服饰购物网</title>
+
+  <link rel="stylesheet" href="style/css.css" />
+  <style>
+    img {
+      transition: .3s;
+      transform: scale(0.8);
+    }
+
+    img:hover {
+      transform: scale(1);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <div class="w">
+      <div class="nav">
+        <ul>
+          <li class="logo">
+            <img src="images/logo.jpg" alt="">
+            <h1>民族服饰购物网</h1>
+          </li>
+          <li><a href="index.html">网站首页</a></li>
+          <li><a href="shop.html">在线商城</a></li>
+          <li><a href="xuetang.html">汉服学堂</a></li>
+          <li><a href="denglu.html">登录</a></li>
+          <li><a href="zhuce.html">注册</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="denglu">
+    <!-- <form action="">
+      <h2>注册</h2>
+      <div class="info">
+        <p>账号</p>
+        <input type="text" id="name" placeholder="请输入账号">
+      </div>
+      <div class="info">
+        <p>密码</p>
+        <input type="password" id="pwd" placeholder="请输入密码">
+      </div>
+      <div class="info">
+        <p style="font-size: 14px; color: red; font-weight: 600;">账户名：admin 密码：123456</p>
+      </div>
+
+      <div class="info">
+        <p style="font-size: 16px; margin-top: 10px;">已有账号， <a href="denglu.html">去登录</a></p>
+      </div>
+
+    </form> -->
+    <form id="myForm">
+      <h2>注册</h2>
+      <div class="info">
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username" placeholder="用户名只能包含字母、数字和下划线">
+        <span class="error-message" id="username-error"></span>
+      </div>
+
+      <div class="info">
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" placeholder="密码6-12个字符">
+        <span class="error-message" id="confirmPassword1-error"></span>
+      </div>
+
+      <div class="info">
+        <label for="confirmPassword">确认密码:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请输入确认密码">
+        <span class="error-message" id="confirmPassword2-error"></span>
+      </div>
+
+      <div class="info">
+        <label>性别:</label> &emsp;
+        <input type="radio" id="male" name="gender" value="male"> <label for="male">男</label>&emsp;
+        <input type="radio" id="female" name="gender" value="female"> <label for="female">女</label>
+        <span class="error-message" id="gender-error"></span>
+      </div>
+
+      <div class="info">
+        <label for="email">电子邮件地址:</label>
+        <input type="text" id="email" name="email" placeholder="邮箱格式为xxx@xx.com">
+        <span class="error-message" id="email-error"></span>
+      </div>
+
+      <div class="info">
+        <input type="submit" class="btn" value="提交">
+      </div>
+
+      <div class="info">
+        <p style="font-size: 16px; margin-top: 10px;">已有账号， <a href="denglu.html">去登录</a></p>
+      </div>
+
+    </form>
+
+  </div>
+
+
+  <div class="footer">
+    <div class="w">
+      <p>&copy;版权所有 | 民族服饰购物网</p>
+    </div>
+  </div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script>
+  $(document).ready(function () {
+    // 光标离开文本框时验证数据合法性
+    $('#username').blur(function () {
+      validateUsername();
+    });
+
+    $('#password').blur(function () {
+      validateConfirmPassword();
+    });
+
+    $('#confirmPassword').blur(function () {
+      validateConfirmPassword();
+    });
+
+    $('#gender').blur(function () {
+      validateGender();
+    });
+
+    $('#email').blur(function () {
+      validateEmail();
+    });
+
+    // 提交表单时验证数据合法性
+    $('#myForm').submit(function (e) {
+      e.preventDefault();
+      var state = validateForm();
+      if (state) {
+        alert("注册成功！")
+      } else {
+        alert("请根据要求填写注册信息！")
+      }
+    });
+
+    // 验证用户名
+    function validateUsername() {
+      var username = $('#username').val();
+      var usernameError = $('#username-error');
+
+      if (username.length === 0) {
+        usernameError.text('用户名不能为空');
+        return false;
+      } else if (username.length < 4 || username.length > 12) {
+        usernameError.text('用户名长度必须在4到12个字符之间');
+        return false;
+      } else if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+        usernameError.text('用户名只能包含字母、数字和下划线');
+        return false;
+      } else {
+        usernameError.text('');
+        return true;
+      }
+    }
+
+    // 验证确认密码
+    function validateConfirmPassword() {
+      var password = $('#password').val();
+      var confirmPassword = $('#confirmPassword').val();
+      var confirmPassword1Error = $('#confirmPassword1-error');
+      var confirmPassword2Error = $('#confirmPassword2-error');
+      console.log(password);
+      if (password == '') {
+        confirmPassword1Error.text('密码不能为空');
+        return false
+      } else {
+        confirmPassword1Error.text('');
+      }
+      if (password.length < 6 || password.length > 12) {
+        confirmPassword1Error.text('密码在6-12个字符');
+        return false
+      } else {
+        confirmPassword1Error.text('');
+      }
+
+      if (confirmPassword == '') {
+        confirmPassword2Error.text('确认密码不能为空');
+        return false
+      }
+
+      if (password !== confirmPassword) {
+        confirmPassword2Error.text('两次输入的密码不一致');
+        return false;
+      } else {
+        confirmPassword2Error.text('');
+        return true;
+      }
+    }
+
+    // 验证性别
+    function validateGender() {
+      var gender = $('input[name="gender"]:checked').val();
+      var genderError = $('#gender-error');
+
+      if (!gender) {
+        genderError.text('请选择性别');
+        return false;
+      } else {
+        genderError.text('');
+        return true;
+      }
+    }
+
+    // 验证电子邮件地址
+    function validateEmail() {
+      var email = $('#email').val();
+      var emailError = $('#email-error');
+
+      if (email.length === 0) {
+        emailError.text('电子邮件地址不能为空');
+        return false;
+      } else if (!/.+@.+\..+/.test(email)) {
+        emailError.text('电子邮件地址格式不正确');
+        return false;
+      } else {
+        emailError.text('');
+        return true;
+      }
+    }
+
+    // 综合验证表单
+    function validateForm() {
+      return validateUsername() && validateConfirmPassword() && validateGender() && validateEmail();
+    }
+  });
+</script>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>民族服饰购物网</title>
+  <link rel="stylesheet" href="style/css.css" />
+</head>
+
+<body>
+  <div class="head">
+    <div class="w">
+      <div class="nav">
+        <ul>
+          <li class="logo">
+            <img src="images/logo.jpg" alt="">
+            <h1>民族服饰购物网</h1>
+          </li>
+          <li><a href="index.html">网站首页</a></li>
+          <li><a href="shop.html">在线商城</a></li>
+          <li><a href="xuetang.html">汉服学堂</a></li>
+          <li><a href="denglu.html">登录</a></li>
+          <li><a href="zhuce.html">注册</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="w wrap info">
+
+    <div class="main">
+
+      <div class="img">
+        <img src="images/i1.avif">
+
+      </div>
+      <ul class="ico">
+        <li><img src="images/i1.avif"></li>
+        <li><img src="images/i2.avif"></li>
+        <li><img src="images/i3.avif"></li>
+        <li><img src="images/i4.avif"></li>
+      </ul>
+      <div class="big_img"></div>
+
+
+      <div class="cp-info">
+        <h2>冬装汉服马面裙方领短袄仙气飘逸套装</h2>
+        <div class="xiangqing_box you">
+          <div class="tips">
+            <div class="time-item">
+              <strong id="hour_show">0时</strong>
+              <strong id="minute_show">0分</strong>
+              <strong id="second_show">0秒</strong>
+            </div>
+          </div>
+          <div class="summary">
+            <dl class="summary_price">
+              <dt>价格</dt>
+              <dd style="line-height: 40px;">
+                <span class="price">￥299.00 </span>
+                <div class="remark">累计评价612188</div>
+              </dd>
+            </dl>
+            <dl class="summary_support">
+              <dt>支持</dt>
+              <dd>可配送全球 | 礼品购</dd>
+            </dl>
+            <dl class="choose_color">
+              <dt>选择颜色</dt>
+              <dd>
+                <a href="javascript:;" style="border-color: #c81623;">白熊熊</a>
+                <a href="javascript:;">锦瑟流年</a>
+                <a href="javascript:;">锦瑟流年</a>
+                <a href="javascript:;">玉兔祈福</a>
+              </dd>
+            </dl>
+
+            <dl class="choose_version">
+              <dt>选择尺码</dt>
+              <dd>
+                <a href="javascript:;" style="border-color: #c81623;">S</a>
+                <a href=" javascript:;">M</a>
+                <a href=" javascript:;">L</a>
+              </dd>
+            </dl>
+            <div class="choose_btns">
+              <div class="choose_amount">
+                <input type="text" id="count" maxlength="2" value="1">
+                <a href="javascript:;" id="add" class="add">+</a>
+                <a href="javascript:;" id="reduce" class="reduce">-</a>
+              </div>
+              <a href="#" class="addcar">加入购物车</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cp-items">
+      <div id="wrap">
+        <div id="tit">
+          <span class="select">商品详情</span>
+          <span>用户评价</span>
+        </div>
+        <ul id="con">
+          <li class="show">
+            <img src="images/ii1.jpg" alt="">
+            <img src="images/ii2.jpg" alt="">
+          </li>
+          <li>
+            <h5>用户xxx</h5>
+            <p>
+              汉服真的太仙啦穿上回头率特别高，做工特别精细好看，喜欢极了端庄优雅系列，配色看着很舒服很大气，穿着特别显气质，绝绝子!!!
+            </p>
+            <hr>
+            <h5>用户xxx</h5>
+            <p>
+              汉服真的太仙啦穿上回头率特别高，做工特别精细好看，喜欢极了端庄优雅系列，配色看着很舒服很大气，穿着特别显气质，绝绝子!!!
+            </p>
+            <hr>
+            <h5>用户xxx</h5>
+            <p>
+              汉服真的太仙啦穿上回头率特别高，做工特别精细好看，喜欢极了端庄优雅系列，配色看着很舒服很大气，穿着特别显气质，绝绝子!!!
+            </p>
+            <hr>
+            <h5>用户xxx</h5>
+            <p>
+              汉服真的太仙啦穿上回头率特别高，做工特别精细好看，喜欢极了端庄优雅系列，配色看着很舒服很大气，穿着特别显气质，绝绝子!!!
+            </p>
+            <hr>
+            <h5>用户xxx</h5>
+            <p>
+              汉服真的太仙啦穿上回头率特别高，做工特别精细好看，喜欢极了端庄优雅系列，配色看着很舒服很大气，穿着特别显气质，绝绝子!!!
+            </p>
+            <hr>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="w">
+      <p>&copy;版权所有 | 民族服饰购物网</p>
+    </div>
+  </div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script>
+  // 图片放大效果
+  $(function () {
+    var src = $('.img img').attr("src");
+    $('.ico li img').click(function () {
+      var srct = $(this).attr("src");
+      $('.img img').attr("src", srct);
+      src = srct;
+    })
+    $('.img').hover(function () {
+      $('.big_img').css({
+        "display": "block",
+        "background-image": 'url(' + src + ')'
+      });
+      $(this).mousemove(function () {
+        var x = event.offsetX - 1;
+        var y = event.offsetY - 1;
+        if (x < 75) {
+          x = 0;
+        } else if (75 <= x <= 300) {
+          x = (x - 75) * 2;
+          if (x > 300) {
+            x = 300;
+          }
+        }
+        if (y < 100) {
+          y = 0;
+        } else if (100 <= y <= 400) {
+          y = (y - 100) * 2;
+          if (y > 400) {
+            y = 400;
+          }
+        }
+
+        $('.big_img').css({
+          "background-position-x": -x,
+          "background-position-y": -y
+        })
+      })
+    }, function () {
+      $('.big_img').css("display", "none")
+    })
+
+  })
+
+  // tab栏切换
+  $('#tit span').click(function () {
+    var i = $(this).index(); //下标第一种写法
+    //var i = $('tit').index(this);//下标第二种写法
+    $(this).addClass('select').siblings().removeClass('select');
+    $('#con li').eq(i).show().siblings().hide();
+  });
+
+  // 点击添加
+  $("#add").click(function () {
+    var count = $("#count").val() * 1
+    $("#count").val(count + 1)
+    console.log(count);
+  })
+
+  $("#reduce").click(function () {
+    var count = $("#count").val() * 1
+    if (count == 1) {
+      alert("商品最少1件噢！")
+      return
+    } else {
+      $("#count").val(count - 1)
+    }
+    console.log(count);
+  })
+
+  // 倒计时效果
+  var intDiff = parseInt(600); //倒计时总秒数量
+  function timer(intDiff) {
+    window.setInterval(function () {
+      var day = 0,
+        hour = 0,
+        minute = 0,
+        second = 0; //时间默认值
+      if (intDiff > 0) {
+        day = Math.floor(intDiff / (60 * 60 * 24));
+        hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+        minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+        second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+      }
+      if (minute <= 9) minute = '0' + minute;
+      if (second <= 9) second = '0' + second;
+      $('#day_show').html(day + "天");
+      $('#hour_show').html('<s id="h"></s>' + hour + '时');
+      $('#minute_show').html('<s></s>' + minute + '分');
+      $('#second_show').html('<s></s>' + second + '秒');
+      intDiff--;
+    }, 1000);
+  }
+  $(function () {
+    timer(intDiff);
+  });
+</script>
+
+</html>

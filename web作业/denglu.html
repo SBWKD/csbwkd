@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>民族服饰购物网</title>
+
+  <link rel="stylesheet" href="style/css.css" />
+  <style>
+    img {
+      transition: .3s;
+      transform: scale(0.8);
+    }
+
+    img:hover {
+      transform: scale(1);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <div class="w">
+      <div class="nav">
+        <ul>
+          <li class="logo">
+            <img src="images/logo.jpg" alt="">
+            <h1>民族服饰购物网</h1>
+          </li>
+          <li><a href="index.html">网站首页</a></li>
+          <li><a href="shop.html">在线商城</a></li>
+          <li><a href="xuetang.html">汉服学堂</a></li>
+          <li><a href="denglu.html">登录</a></li>
+          <li><a href="zhuce.html">注册</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="denglu">
+    <form action="">
+      <h2>登录</h2>
+      <div class="info">
+        <label for="name">账号:</label>
+        <input type="text" id="name" placeholder="请输入账号">
+      </div>
+      <div class="info">
+        <label for="pwd">密码:</label>
+        <input type="password" id="pwd" placeholder="请输入密码">
+      </div>
+      <div class="info">
+        <p style="font-size: 14px; color: red; font-weight: 600;">账户名：admin 密码：123456</p>
+      </div>
+
+      <div class="info">
+        <div class="btn" id="loginbtn">登录</div>
+
+        <p style="font-size: 16px; margin-top: 10px;">还没有账号？ <a href="zhuce.html">去注册</a></p>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="footer">
+    <div class="w">
+      <p>&copy;版权所有 | 民族服饰购物网</p>
+    </div>
+  </div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script>
+  // 登陆表单验证
+  $("#loginbtn").click(function () {
+    var name = $("#name").val()
+    var pwd = $("#pwd").val()
+    console.log(name, pwd);
+    if (name == '') {
+      alert("账户名不能为空!")
+      return
+    }
+
+    if (pwd == "") {
+      alert("密码不能为空！")
+      return
+    }
+
+    if (name == 'admin' && pwd == "123456") {
+      alert("登陆成功！")
+      window.location.href = "index.html"
+    } else {
+      alert("账号名或密码有误，请重新输入！")
+    }
+
+  })
+</script>
+
+</html>
